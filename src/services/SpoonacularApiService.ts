@@ -2,7 +2,7 @@ import axios from "axios";
 import DetailedRecipe from "../models/DetailedRecipe";
 import RecipeResponse from "../models/RecipeResponse";
 
-const apiKey: string = process.env.REACT_APP_SPOONTACULAR_API_KEY4 || "";
+const apiKey: string = process.env.REACT_APP_SPOONTACULAR_API_KEY2 || "";
 
 export const getRecipeData = (): Promise<RecipeResponse> => {
   return axios
@@ -27,17 +27,19 @@ export const getRecipeById = (id: string): Promise<DetailedRecipe> => {
 };
 
 export const getRecipesBySearchTerm = (
-  searchTerm: string
-  // vegetarianDiet: boolean
-  // glutenIntolerance: boolean
+  searchTerm: string,
+  diets: string,
+  intolerances: string
 ): Promise<RecipeResponse> => {
+  // console.log(intolerances);
+
   return axios
     .get("https://api.spoonacular.com/recipes/complexSearch", {
       params: {
         apiKey: apiKey,
         query: searchTerm,
-        // diet: vegetarianDiet,
-        // intolerances: glutenIntolerance,
+        diet: diets,
+        intolerances: intolerances,
       },
     })
     .then((res) => res.data)

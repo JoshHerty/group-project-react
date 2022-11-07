@@ -11,18 +11,28 @@ import SearchForm from "./SearchForm";
 const Main = () => {
   const [recipes, setRecipes] = useState<Recipe[]>([]);
   const [searchTerm, setSearchTerm] = useState("");
+  const [diets, setDiets] = useState("");
+  const [intolerances, setIntolerances] = useState("");
+
+  // console.log(diets);
 
   useEffect(() => {
     if (searchTerm !== "") {
-      getRecipesBySearchTerm(searchTerm).then((res) => setRecipes(res.results));
+      getRecipesBySearchTerm(searchTerm, diets, intolerances).then((res) =>
+        setRecipes(res.results)
+      );
     } else {
       getRecipeData().then((res) => setRecipes(res.results));
     }
-  }, [searchTerm]);
+  }, [searchTerm, diets, intolerances]);
 
   return (
     <main className="Main">
-      <SearchForm setTerm={setSearchTerm} />
+      <SearchForm
+        setTerm={setSearchTerm}
+        setDiet={setDiets}
+        setIntolerance={setIntolerances}
+      />
       <ResultsList recipes={recipes} />
     </main>
   );
