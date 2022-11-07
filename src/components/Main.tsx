@@ -17,7 +17,7 @@ const Main = () => {
   // console.log(diets);
 
   useEffect(() => {
-    if (searchTerm !== "") {
+    if (searchTerm !== "" || diets || intolerances) {
       getRecipesBySearchTerm(searchTerm, diets, intolerances).then((res) =>
         setRecipes(res.results)
       );

@@ -13,6 +13,7 @@ const DetailedResult = ({ detailedRecipe }: Props) => {
       <p>{detailedRecipe.title}</p>
       <img src={detailedRecipe.image} alt={detailedRecipe.title} />
       <p>{cleanSummary}</p>
+      <a href={detailedRecipe.sourceUrl}>Source</a>
     </div>
   );
 };
