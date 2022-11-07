@@ -20,7 +20,6 @@ const Result = ({ oneRecipe }: Props) => {
         <button
           onClick={() => {
             addFavorite(oneRecipe);
-            // console.log(oneRecipe);
           }}
         >
           Add &hearts;
