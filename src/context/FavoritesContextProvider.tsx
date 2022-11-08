@@ -13,7 +13,6 @@ const FavoritesContextProvider = ({ children }: Props) => {
   const [favorites, setFavorites] = useState<Recipe[]>([]);
 
   const addFavorite = (recipe: Recipe): void => {
-    console.log("test");
     setFavorites((prev) => [...prev, recipe]);
     // console.log(favorites);
     // console.log(favorites);
@@ -29,6 +28,7 @@ const FavoritesContextProvider = ({ children }: Props) => {
         ...prev.slice(0, index),
         ...prev.slice(index + 1),
       ]);
+      // console.log(favorites);
     }
   };
 

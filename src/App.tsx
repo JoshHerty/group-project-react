@@ -6,6 +6,7 @@ import {
 } from "react-router-dom";
 import "./App.css";
 import Details from "./components/Details";
+import Favorites from "./components/Favorites";
 import Header from "./components/Header";
 import Main from "./components/Main";
 
@@ -17,6 +18,7 @@ function App() {
         <Routes>
           <Route path="/home" element={<Main />} />
           <Route path="/details/:id" element={<Details />} />
+          <Route path="/favorites" element={<Favorites />} />
           {/* wildcard: */}
           <Route path="*" element={<Navigate to="/home" />} />
         </Routes>
