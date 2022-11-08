@@ -3,8 +3,6 @@ import Recipe from "../models/Recipe";
 import "./Result.css";
 import FavoritesContext from "../context/FavoritesContext";
 import { useContext } from "react";
-import { faStar } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 interface Props {
   oneRecipe: Recipe;
