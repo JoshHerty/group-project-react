@@ -13,6 +13,7 @@ const DetailedResult = ({ detailedRecipe }: Props) => {
 
   return (
     <div className="DetailedResult">
+<<<<<<< HEAD
       <div className="title-link">
         <p className="title">{detailedRecipe.title}</p>
         <a href={detailedRecipe.sourceUrl}>Source</a>
@@ -44,6 +45,34 @@ const DetailedResult = ({ detailedRecipe }: Props) => {
           </div>
         )}
       </div>
+=======
+      <p>{detailedRecipe.title}</p>
+      <img src={detailedRecipe.image} alt={detailedRecipe.title} />
+      <p className="summary">{cleanSummary}</p>
+      <a href={detailedRecipe.sourceUrl}>Source</a>
+      {!isFav(detailedRecipe.id) ? (
+        <button
+          onClick={() => {
+            addFavorite({
+              title: detailedRecipe.title,
+              id: detailedRecipe.id,
+              image: detailedRecipe.image,
+            });
+          }}
+        >
+          Add &hearts;
+        </button>
+      ) : (
+        <button
+          className="fav"
+          onClick={() => {
+            deleteFavorite(detailedRecipe.id);
+          }}
+        >
+          Remove &hearts;
+        </button>
+      )}
+>>>>>>> 40c2590fb7cde47009944d44b257aedc2f1378e7
     </div>
   );
 };

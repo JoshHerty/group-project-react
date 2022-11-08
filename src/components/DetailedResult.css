@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .DetailedResult .center-img-p {
   display: flex;
   flex-direction: column;
@@ -21,6 +22,15 @@
 .DetailedResult img {
   border-radius: 15px;
   width: 400px;
+=======
+.DetailedResult p {
+  margin-left: 3%;
+}
+
+.DetailedResult img {
+  margin-left: 3%;
+  border-radius: 15px;
+>>>>>>> 40c2590fb7cde47009944d44b257aedc2f1378e7
 }
 
 .DetailedResult a {
@@ -35,6 +45,7 @@
   background-color: #789645;
   border: 2px solid white;
   padding: 5px;
+<<<<<<< HEAD
   width: 375px;
 }
 
@@ -44,4 +55,7 @@
 
 .DetailedResult .yellow {
   color: gold;
+=======
+  width: 95%;
+>>>>>>> 40c2590fb7cde47009944d44b257aedc2f1378e7
 }
