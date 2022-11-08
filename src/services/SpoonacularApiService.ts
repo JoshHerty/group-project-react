@@ -6,7 +6,7 @@ const apiKey: string = process.env.REACT_APP_SPOONTACULAR_API_KEY1 || "";
 
 export const getRecipeData = (): Promise<RecipeResponse> => {
   return axios
-    .get(`https://api.spoonacular.com/recipes/complexSearch?number=15`, {
+    .get(`https://api.spoonacular.com/recipes/complexSearch?number=16`, {
       params: { apiKey: apiKey },
     })
     .then((res) => {

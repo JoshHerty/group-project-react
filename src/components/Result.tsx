@@ -3,6 +3,8 @@ import Recipe from "../models/Recipe";
 import "./Result.css";
 import FavoritesContext from "../context/FavoritesContext";
 import { useContext } from "react";
+import { faStar } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 interface Props {
   oneRecipe: Recipe;
@@ -17,22 +19,23 @@ const Result = ({ oneRecipe }: Props) => {
         <img src={oneRecipe.image} alt={oneRecipe.title} />
       </Link>
       {!isFav(oneRecipe.id) ? (
-        <button
-          onClick={() => {
-            addFavorite(oneRecipe);
-          }}
-        >
-          Add &hearts;
-        </button>
+        <div>
+          <i
+            className="fa-regular fa-star fa-4x"
+            onClick={() => {
+              addFavorite(oneRecipe);
+            }}
+          ></i>
+        </div>
       ) : (
-        <button
-          className="fav"
-          onClick={() => {
-            deleteFavorite(oneRecipe.id);
-          }}
-        >
-          Remove &hearts;
-        </button>
+        <div>
+          <i
+            className="changeColor fa-solid fa-star fa-4x yellow"
+            onClick={() => {
+              deleteFavorite(oneRecipe.id);
+            }}
+          ></i>
+        </div>
       )}
     </li>
   );
