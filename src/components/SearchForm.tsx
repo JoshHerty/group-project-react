@@ -84,6 +84,7 @@ const SearchForm = ({ setTerm, setDiet, setIntolerance }: Props) => {
   const [searchRecipe, setSearchRecipe] = useState("");
   const [diets, setDiets] = useState([""]);
   const [intolerances, setIntolerances] = useState([""]);
+  const [showOptions, setShowOptions] = useState(false);
 
   //   console.log(vegan);
 
@@ -136,88 +137,99 @@ const SearchForm = ({ setTerm, setDiet, setIntolerance }: Props) => {
           }}
         />
         <section>
-          <p>Diets</p>
-          <label htmlFor="vegan">Vegan</label>
-          <input
-            type="checkbox"
-            name="vegan"
-            id="vegan"
-            onChange={(e) => {
-              if (e.target.checked) {
-                addDiet("vegan");
-              } else {
-                removeDiet("vegan");
-              }
-            }}
-          />
-          <label htmlFor="vegetarian">Vegetarian</label>
-          <input
-            type="checkbox"
-            name="vegetarian"
-            id="vegetarian"
-            onChange={(e) => {
-              if (e.target.checked) {
-                addDiet("vegetarian");
-              } else {
-                removeDiet("vegetarian");
-              }
-            }}
-          />
-          <label htmlFor="gluten">Gluten</label>
-          <input
-            type="checkbox"
-            name="gluten"
-            id="gluten"
-            onChange={(e) => {
-              if (e.target.checked) {
-                addDiet("gluten");
-              } else {
-                removeDiet("gluten");
-              }
-            }}
-          />
-          <p>Intolerances</p>
-          <label htmlFor="dairy">Dairy</label>
-          <input
-            type="checkbox"
-            name="dairy"
-            id="dairy"
-            onChange={(e) => {
-              if (e.target.checked) {
-                addIntolerance("dairy");
-              } else {
-                removeIntolerance("dairy");
-              }
-            }}
-          />
-          <label htmlFor="tree-nut">Tree nut</label>
-          <input
-            type="checkbox"
-            name="tree-nut"
-            id="tree-nut"
-            onChange={(e) => {
-              if (e.target.checked) {
-                addIntolerance("tree nut");
-              } else {
-                removeIntolerance("tree nut");
-              }
-            }}
-          />
-          <label htmlFor="seafood">Seafood</label>
-          <input
-            type="checkbox"
-            name="seafood"
-            id="seafood"
-            onChange={(e) => {
-              if (e.target.checked) {
-                addIntolerance("seafood");
-              } else {
-                removeIntolerance("seafood");
-              }
-            }}
-          />
+          {showOptions ? (
+            <div>
+              <p>Diets:</p>
+              <label htmlFor="vegan">Vegan</label>
+              <input
+                type="checkbox"
+                name="vegan"
+                id="vegan"
+                onChange={(e) => {
+                  if (e.target.checked) {
+                    addDiet("vegan");
+                  } else {
+                    removeDiet("vegan");
+                  }
+                }}
+              />
+              <label htmlFor="vegetarian">Vegetarian</label>
+              <input
+                type="checkbox"
+                name="vegetarian"
+                id="vegetarian"
+                onChange={(e) => {
+                  if (e.target.checked) {
+                    addDiet("vegetarian");
+                  } else {
+                    removeDiet("vegetarian");
+                  }
+                }}
+              />
+              <label htmlFor="gluten">Gluten</label>
+              <input
+                type="checkbox"
+                name="gluten"
+                id="gluten"
+                onChange={(e) => {
+                  if (e.target.checked) {
+                    addDiet("gluten");
+                  } else {
+                    removeDiet("gluten");
+                  }
+                }}
+              />
+              <p>Intolerances:</p>
+              <label htmlFor="dairy">Dairy</label>
+              <input
+                type="checkbox"
+                name="dairy"
+                id="dairy"
+                onChange={(e) => {
+                  if (e.target.checked) {
+                    addIntolerance("dairy");
+                  } else {
+                    removeIntolerance("dairy");
+                  }
+                }}
+              />
+              <label htmlFor="tree-nut">Tree nut</label>
+              <input
+                type="checkbox"
+                name="tree-nut"
+                id="tree-nut"
+                onChange={(e) => {
+                  if (e.target.checked) {
+                    addIntolerance("tree nut");
+                  } else {
+                    removeIntolerance("tree nut");
+                  }
+                }}
+              />
+              <label htmlFor="seafood">Seafood</label>
+              <input
+                type="checkbox"
+                name="seafood"
+                id="seafood"
+                onChange={(e) => {
+                  if (e.target.checked) {
+                    addIntolerance("seafood");
+                  } else {
+                    removeIntolerance("seafood");
+                  }
+                }}
+              />
+              <div className="button" onClick={() => setShowOptions(false)}>
+                <p>Show Less</p>
+              </div>
+            </div>
+          ) : (
+            <div className="button" onClick={() => setShowOptions(true)}>
+              <p>Show More</p>
+            </div>
+          )}
+          <button>Search</button>
         </section>
-        <button>Search</button>
       </label>
     </form>
   );

@@ -4,7 +4,10 @@ import "./Header.css";
 const Header = () => {
   return (
     <div className="Header">
-      Working Title
+      <h1>Coding Cookbook</h1>
+      <Link to={"/home"}>
+        <button>Home</button>
+      </Link>
       <Link to={`/favorites`}>
         <button>Favorites</button>
       </Link>

@@ -1,0 +1,34 @@
+.SearchForm #searchTerm {
+  height: 40px;
+  width: 80%;
+  margin: 0 10%;
+  box-sizing: border-box;
+  font-size: 20px;
+}
+
+.SearchForm section {
+  margin: 0 10%;
+}
+
+.SearchForm .button {
+  width: 100px;
+  height: 40px;
+  background-color: #789645;
+  border: 1px solid #eeeeee;
+  border-radius: 7px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0;
+  color: #1a1110;
+  font-weight: bold;
+  font-size: 17px;
+}
+
+.SearchForm button {
+  background-color: lightgrey;
+  border-color: #eeeeee;
+  padding: 10px 50px;
+  font-size: 17px;
+}

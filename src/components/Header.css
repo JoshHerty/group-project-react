@@ -1,3 +1,14 @@
 .Header {
-  font-size: 25px;
+  font-size: 15px;
+  color: #674747;
+  background-color: #789645;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 3px solid #eeeeee;
+}
+
+.Header button {
+  border: 1px solid grey;
+  color: #674747;
 }

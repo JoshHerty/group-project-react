@@ -2,7 +2,7 @@ import axios from "axios";
 import DetailedRecipe from "../models/DetailedRecipe";
 import RecipeResponse from "../models/RecipeResponse";
 
-const apiKey: string = process.env.REACT_APP_SPOONTACULAR_API_KEY2 || "";
+const apiKey: string = process.env.REACT_APP_SPOONTACULAR_API_KEY1 || "";
 
 export const getRecipeData = (): Promise<RecipeResponse> => {
   return axios
