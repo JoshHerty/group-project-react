@@ -8,7 +8,19 @@
   border-bottom: 3px solid #eeeeee;
 }
 
+.Header h1 {
+  margin-left: 3%;
+}
+
+.Header .btn-contianer {
+  display: flex;
+  width: 170px;
+  justify-content: space-between;
+  margin-right: 2%;
+}
+
 .Header button {
-  border: 1px solid grey;
+  background-color: lightgrey;
+  border-color: #eeeeee;
   color: #674747;
 }

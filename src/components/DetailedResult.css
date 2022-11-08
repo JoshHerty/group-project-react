@@ -1,0 +1,23 @@
+.DetailedResult p {
+  margin-left: 3%;
+}
+
+.DetailedResult img {
+  margin-left: 3%;
+  border-radius: 15px;
+}
+
+.DetailedResult a {
+  background-color: lightgrey;
+  border: 2px solid #eeeeee;
+  color: black;
+  padding: 2px 5px;
+  margin: 3%;
+}
+
+.DetailedResult .summary {
+  background-color: #789645;
+  border: 2px solid white;
+  padding: 5px;
+  width: 95%;
+}

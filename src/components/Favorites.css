@@ -3,3 +3,19 @@
   width: 317.391px;
   height: 235px;
 }
+
+.Favorites .results {
+  color: #674747;
+  text-align: center;
+  border-top: 1px dashed #eeeeee;
+  border-bottom: 1px dashed #eeeeee;
+  font-size: 40px;
+}
+
+.Favorites {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+}
