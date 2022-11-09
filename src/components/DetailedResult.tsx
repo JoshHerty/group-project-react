@@ -1,7 +1,10 @@
 import { useContext } from "react";
 import FavoritesContext from "../context/FavoritesContext";
 import DetailedRecipe from "../models/DetailedRecipe";
+import Recipe from "../models/Recipe";
+import RecipeResponse from "../models/RecipeResponse";
 import "./DetailedResult.css";
+import SimilarRecipeList from "./SimilarRecipeList";
 
 interface Props {
   detailedRecipe: DetailedRecipe;
@@ -15,7 +18,9 @@ const DetailedResult = ({ detailedRecipe }: Props) => {
     <div className="DetailedResult">
       <div className="title-link">
         <p className="title">{detailedRecipe.title}</p>
-        <a href={detailedRecipe.sourceUrl}>Source</a>
+        <a className="source" href={detailedRecipe.sourceUrl}>
+          Source
+        </a>
       </div>
       <div className="center-img-p">
         <img src={detailedRecipe.image} alt={detailedRecipe.title} />
@@ -23,7 +28,7 @@ const DetailedResult = ({ detailedRecipe }: Props) => {
         {!isFav(detailedRecipe.id) ? (
           <div>
             <i
-              className="fa-regular fa-star fa-4x"
+              className="fa-regular fa-heart fa-4x"
               onClick={() => {
                 addFavorite({
                   title: detailedRecipe.title,
@@ -36,13 +41,17 @@ const DetailedResult = ({ detailedRecipe }: Props) => {
         ) : (
           <div>
             <i
-              className="changeColor fa-solid fa-star fa-4x yellow"
+              className="changeColor fa-solid fa-heart fa-4x pink"
               onClick={() => {
                 deleteFavorite(detailedRecipe.id);
               }}
             ></i>
           </div>
         )}
+      </div>
+      <div className="similar-recipes">
+        <p>Similar Recipes</p>
+        <SimilarRecipeList id={detailedRecipe.id.toString()} />
       </div>
     </div>
   );

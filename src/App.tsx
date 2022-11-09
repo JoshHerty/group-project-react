@@ -9,6 +9,7 @@ import Details from "./components/Details";
 import Favorites from "./components/Favorites";
 import Header from "./components/Header";
 import Main from "./components/Main";
+import { getSimilarRecipes } from "./services/SpoonacularApiService";
 
 function App() {
   return (

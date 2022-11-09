@@ -57,7 +57,7 @@ const SearchForm = ({ setTerm, setDiet, setIntolerance }: Props) => {
       if (!prev) {
         setTimeout(() => {
           setFadeIn(true);
-        }, 1);
+        }, 0.1);
       } else {
         setFadeIn(false);
         setDiets([""]);

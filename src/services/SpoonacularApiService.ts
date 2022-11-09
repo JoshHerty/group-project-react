@@ -1,5 +1,6 @@
 import axios from "axios";
 import DetailedRecipe from "../models/DetailedRecipe";
+import Recipe from "../models/Recipe";
 import RecipeResponse from "../models/RecipeResponse";
 
 const apiKey: string = process.env.REACT_APP_SPOONTACULAR_API_KEY2 || "";
@@ -20,6 +21,15 @@ export const getRecipeData = (): Promise<RecipeResponse> => {
 export const getRecipeById = (id: string): Promise<DetailedRecipe> => {
   return axios
     .get(`https://api.spoonacular.com/recipes/${id}/information`, {
+      params: { apiKey: apiKey },
+    })
+    .then((res) => res.data)
+    .catch((error) => console.log(error));
+};
+
+export const getSimilarRecipes = (id: string): Promise<Recipe[]> => {
+  return axios
+    .get(`https://api.spoonacular.com/recipes/${id}/similar?number=3`, {
       params: { apiKey: apiKey },
     })
     .then((res) => res.data)

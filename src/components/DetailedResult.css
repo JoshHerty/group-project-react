@@ -1,3 +1,7 @@
+.DetailedResult {
+  height: 100%;
+}
+
 .DetailedResult .center-img-p {
   display: flex;
   flex-direction: column;
@@ -23,7 +27,7 @@
   width: 400px;
 }
 
-.DetailedResult a {
+.DetailedResult .source {
   background-color: lightgrey;
   border: 2px solid #eeeeee;
   color: black;
@@ -42,6 +46,13 @@
   line-height: 1;
 }
 
-.DetailedResult .yellow {
-  color: gold;
+.DetailedResult .pink {
+  color: pink;
+}
+
+.DetailedResult .similar-recipes {
+  background-color: #789645;
+  position: relative;
+  width: 100%;
+  bottom: 0;
 }
