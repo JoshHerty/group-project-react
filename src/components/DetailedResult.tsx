@@ -16,41 +16,43 @@ const DetailedResult = ({ detailedRecipe }: Props) => {
 
   return (
     <div className="DetailedResult">
-      <div className="title-link">
-        <p className="title">{detailedRecipe.title}</p>
-        <a className="source" href={detailedRecipe.sourceUrl}>
-          Source
-        </a>
-      </div>
-      <div className="center-img-p">
-        <img src={detailedRecipe.image} alt={detailedRecipe.title} />
-        <p className="summary">{cleanSummary}</p>
-        {!isFav(detailedRecipe.id) ? (
-          <div>
-            <i
-              className="fa-regular fa-heart fa-4x"
-              onClick={() => {
-                addFavorite({
-                  title: detailedRecipe.title,
-                  id: detailedRecipe.id,
-                  image: detailedRecipe.image,
-                });
-              }}
-            ></i>
-          </div>
-        ) : (
-          <div>
-            <i
-              className="changeColor fa-solid fa-heart fa-4x pink"
-              onClick={() => {
-                deleteFavorite(detailedRecipe.id);
-              }}
-            ></i>
-          </div>
-        )}
+      <div>
+        <div className="title-link">
+          <p className="title">{detailedRecipe.title}</p>
+          <a className="source" href={detailedRecipe.sourceUrl}>
+            Source
+          </a>
+        </div>
+        <div className="center-img-p">
+          <img src={detailedRecipe.image} alt={detailedRecipe.title} />
+          <p className="summary">{cleanSummary}</p>
+          {!isFav(detailedRecipe.id) ? (
+            <div>
+              <i
+                className="fa-regular fa-heart fa-4x"
+                onClick={() => {
+                  addFavorite({
+                    title: detailedRecipe.title,
+                    id: detailedRecipe.id,
+                    image: detailedRecipe.image,
+                  });
+                }}
+              ></i>
+            </div>
+          ) : (
+            <div>
+              <i
+                className="changeColor fa-solid fa-heart fa-4x pink"
+                onClick={() => {
+                  deleteFavorite(detailedRecipe.id);
+                }}
+              ></i>
+            </div>
+          )}
+        </div>
       </div>
       <div className="similar-recipes">
-        <p>Similar Recipes</p>
+        <p id="footer-title">Similar Recipes:</p>
         <SimilarRecipeList id={detailedRecipe.id.toString()} />
       </div>
     </div>

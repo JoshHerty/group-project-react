@@ -1,5 +1,9 @@
 .DetailedResult {
-  height: 100%;
+  max-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .DetailedResult .center-img-p {
@@ -32,7 +36,7 @@
   border: 2px solid #eeeeee;
   color: black;
   padding: 2px 5px;
-  margin: 3%;
+  margin: 15px;
 }
 
 .DetailedResult .summary {
@@ -44,6 +48,7 @@
 
 .DetailedResult .fa-4x {
   line-height: 1;
+  margin-bottom: 75px;
 }
 
 .DetailedResult .pink {
@@ -51,8 +56,43 @@
 }
 
 .DetailedResult .similar-recipes {
+  display: flex;
+  flex-direction: row;
   background-color: #789645;
-  position: relative;
+  position: fixed;
   width: 100%;
   bottom: 0;
+  margin-top: 10px;
+  align-items: center;
+  border-top: 3px solid #eeeeee;
+  padding: 10px 0;
+}
+.DetailedResult .SimilarRecipeList {
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+  justify-content: space-between;
+  position: relative;
+  align-items: center;
+}
+.DetailedResult #footer-title {
+  width: 175px;
+  margin-left: 2%;
+  font-size: 18pt;
+}
+.DetailedResult .SimilarRecipeList div {
+  position: relative;
+  width: 300px;
+  margin: 0 10px;
+  padding: 5px;
+  border: 2px dashed #eeeeee;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.DetailedResult .SimilarRecipeList div a {
+  color: black;
+  text-decoration: none;
 }
