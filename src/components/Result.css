@@ -28,4 +28,5 @@
 
 .Result .pink {
   color: pink;
+  -webkit-text-stroke: 6px black;
 }

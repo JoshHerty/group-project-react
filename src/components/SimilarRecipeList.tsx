@@ -22,7 +22,9 @@ const SimilarRecipeList = ({ id }: Props) => {
       {simRecipes.map((recipe) => (
         <div>
           <Link to={`/details/${recipe.id}`}>
-            <p key={recipe.id}>{recipe.title}</p>
+            <p key={`${recipe.id}${Math.floor(Math.random() * 200000)}`}>
+              {recipe.title}
+            </p>
           </Link>
         </div>
       ))}

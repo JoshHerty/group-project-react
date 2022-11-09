@@ -3,11 +3,11 @@ import DetailedRecipe from "../models/DetailedRecipe";
 import Recipe from "../models/Recipe";
 import RecipeResponse from "../models/RecipeResponse";
 
-const apiKey: string = process.env.REACT_APP_SPOONTACULAR_API_KEY3 || "";
+const apiKey: string = process.env.REACT_APP_SPOONTACULAR_API_KEY5 || "";
 
 export const getRecipeData = (): Promise<RecipeResponse> => {
   return axios
-    .get(`https://api.spoonacular.com/recipes/complexSearch?number=16`, {
+    .get(`https://api.spoonacular.com/recipes/complexSearch?number=15`, {
       params: { apiKey: apiKey },
     })
     .then((res) => {
@@ -29,7 +29,7 @@ export const getRecipeById = (id: string): Promise<DetailedRecipe> => {
 
 export const getSimilarRecipes = (id: string): Promise<Recipe[]> => {
   return axios
-    .get(`https://api.spoonacular.com/recipes/${id}/similar?number=3`, {
+    .get(`https://api.spoonacular.com/recipes/${id}/similar?number=4`, {
       params: { apiKey: apiKey },
     })
     .then((res) => res.data)
