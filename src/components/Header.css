@@ -11,21 +11,36 @@
 
 .Header button {
   border: 1px solid grey;
+  padding: 5px;
+  background-color: lightgray;
+  border-radius: 5px;
+  font-size: 20px;
+}
+
+.Header .fav {
+  background-color: mistyrose;
   color: #674747;
 }
 
 .Header .btn-contianer {
   display: flex;
-  width: 170px;
+  width: 200px;
   justify-content: space-between;
   margin-right: 2%;
 }
 
 .Header h1 {
+  font-size: 30px;
   margin-left: 3%;
+  font-family: "Caveat", cursive;
+  user-select: none;
 }
 
 @media only screen and (min-width: 768px) {
+  .Header h1 {
+    font-size: 50px;
+  }
+
   .Header button {
     font-size: 20px;
   }

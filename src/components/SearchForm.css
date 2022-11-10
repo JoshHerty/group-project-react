@@ -1,7 +1,7 @@
 .SearchForm #searchTerm {
   height: 40px;
   width: 80%;
-  margin: 0 10%;
+  margin: 5px 10% 0 10%;
   box-sizing: border-box;
   font-size: 20px;
 }
@@ -19,7 +19,7 @@
 }
 
 .SearchForm .options {
-  transform: translate(0, -10px);
+  transform: translate(0, -25px);
   transition: transform 0.025s linear;
 }
 
@@ -41,11 +41,19 @@
   color: #1a1110;
   font-weight: bold;
   font-size: 17px;
+  cursor: pointer;
 }
 
 .SearchForm button {
   background-color: lightgrey;
-  border-color: #eeeeee;
+  border-radius: 15px;
+  /* border-color: #eeeeee; */
+  border: none;
   padding: 10px 50px;
   font-size: 17px;
+  cursor: pointer;
+}
+
+.SearchForm input {
+  margin-right: 20px;
 }

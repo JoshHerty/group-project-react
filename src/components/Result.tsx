@@ -12,7 +12,7 @@ const Result = ({ oneRecipe }: Props) => {
   const { addFavorite, isFav, deleteFavorite } = useContext(FavoritesContext);
   return (
     <li className="Result">
-      <h2>{oneRecipe.title}</h2>
+      <h3>{oneRecipe.title}</h3>
       <div className="">
         <Link to={`/details/${oneRecipe.id}`}>
           <img src={oneRecipe.image} alt={oneRecipe.title} />

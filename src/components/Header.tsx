@@ -10,7 +10,7 @@ const Header = () => {
           <button>Home</button>
         </Link>
         <Link to={`/favorites`}>
-          <button>Favorites</button>
+          <button className="fav">Favorites</button>
         </Link>
       </div>
     </div>

@@ -16,14 +16,20 @@
 
 .Result img {
   border-radius: 15px;
+  width: 317.391px;
+  height: 235px;
 }
 
 .Result h3 {
   font-size: 26px;
+  /* text-decoration: underline;
+  text-decoration-color: #353935; */
+  color: #eeeeee;
 }
 
 .Result .fa-4x {
   line-height: 1;
+  cursor: pointer;
 }
 
 .Result .pink {

@@ -86,7 +86,7 @@ const SearchForm = ({ setTerm, setDiet, setIntolerance }: Props) => {
               <div className="show-more">
                 <div className={`options${fadeIn ? " animate" : ""}`}>
                   <p>Diets:</p>
-                  <label htmlFor="vegan">Vegan</label>
+                  <label htmlFor="vegan">Vegan:</label>
                   <input
                     type="checkbox"
                     name="vegan"
@@ -99,7 +99,7 @@ const SearchForm = ({ setTerm, setDiet, setIntolerance }: Props) => {
                       }
                     }}
                   />
-                  <label htmlFor="vegetarian">Vegetarian</label>
+                  <label htmlFor="vegetarian">Vegetarian:</label>
                   <input
                     type="checkbox"
                     name="vegetarian"
@@ -112,7 +112,7 @@ const SearchForm = ({ setTerm, setDiet, setIntolerance }: Props) => {
                       }
                     }}
                   />
-                  <label htmlFor="gluten">Gluten</label>
+                  <label htmlFor="gluten">Gluten:</label>
                   <input
                     type="checkbox"
                     name="gluten"
@@ -126,7 +126,7 @@ const SearchForm = ({ setTerm, setDiet, setIntolerance }: Props) => {
                     }}
                   />
                   <p>Intolerances:</p>
-                  <label htmlFor="dairy">Dairy</label>
+                  <label htmlFor="dairy">Dairy:</label>
                   <input
                     type="checkbox"
                     name="dairy"
@@ -139,7 +139,7 @@ const SearchForm = ({ setTerm, setDiet, setIntolerance }: Props) => {
                       }
                     }}
                   />
-                  <label htmlFor="tree-nut">Tree nut</label>
+                  <label htmlFor="tree-nut">Tree nut:</label>
                   <input
                     type="checkbox"
                     name="tree-nut"
@@ -152,7 +152,7 @@ const SearchForm = ({ setTerm, setDiet, setIntolerance }: Props) => {
                       }
                     }}
                   />
-                  <label htmlFor="seafood">Seafood</label>
+                  <label htmlFor="seafood">Seafood:</label>
                   <input
                     type="checkbox"
                     name="seafood"
@@ -176,7 +176,9 @@ const SearchForm = ({ setTerm, setDiet, setIntolerance }: Props) => {
               <p>Show More</p>
             </div>
           )}
-          <button>Search</button>
+          <button className="search-button" title="Search">
+            <i className="fa-solid fa-magnifying-glass fa-2x"></i>
+          </button>
         </section>
       </label>
     </form>

@@ -3,6 +3,10 @@ import FavoritesContext from "../context/FavoritesContext";
 import DetailedRecipe from "../models/DetailedRecipe";
 import "./DetailedResult.css";
 import SimilarRecipeList from "./SimilarRecipeList";
+import vegan from "../assets/Untitled-1.png";
+import vegetarian from "../assets/Untitled-4.png";
+import dairyFree from "../assets/Untitled-3.png";
+import glutenFree from "../assets/Untitled-2.png";
 
 interface Props {
   detailedRecipe: DetailedRecipe;
@@ -47,6 +51,33 @@ const DetailedResult = ({ detailedRecipe }: Props) => {
                 ></i>
               </div>
             )}
+            <div>
+              <div className="icons">
+                {detailedRecipe.vegan ? (
+                  <img className="icon" src={vegan} alt="vegan" />
+                ) : (
+                  ""
+                )}
+
+                {detailedRecipe.vegetarian && !detailedRecipe.vegan ? (
+                  <img className="icon" src={vegetarian} alt="vegetarian" />
+                ) : (
+                  ""
+                )}
+
+                {detailedRecipe.glutenFree ? (
+                  <img className="icon" src={glutenFree} alt="gluten free" />
+                ) : (
+                  ""
+                )}
+
+                {detailedRecipe.dairyFree ? (
+                  <img className="icon" src={dairyFree} alt="dairy free" />
+                ) : (
+                  ""
+                )}
+              </div>
+            </div>
             <p className="summary">{cleanSummary}</p>
           </div>
           <ul className="ingredients">
