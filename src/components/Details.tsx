@@ -1,14 +1,13 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import DetailedRecipe from "../models/DetailedRecipe";
-import Recipe from "../models/Recipe";
-import RecipeResponse from "../models/RecipeResponse";
 import {
   getRecipeById,
   // getSimilarRecipes,
 } from "../services/SpoonacularApiService";
 import DetailedResult from "./DetailedResult";
 import "./Details.css";
+import loadingGif from "../assets/loading-gif.gif";
 
 const Details = () => {
   const id: string | undefined = useParams().id;
@@ -33,7 +32,7 @@ const Details = () => {
           // similarRecipes={similarRecipe}
         />
       ) : (
-        <p>loading...</p>
+        <img className="loading" src={loadingGif} alt="loading" />
       )}
     </div>
   );
