@@ -17,78 +17,80 @@ const DetailedResult = ({ detailedRecipe }: Props) => {
   let cleanSummary = detailedRecipe.summary.replace(/<\/?[^>]+(>|$)/g, "");
 
   return (
-    <div className="DetailedResult">
-      <div className="title-link">
-        <p className="title">{detailedRecipe.title}</p>
-        <a className="source" href={detailedRecipe.sourceUrl}>
-          Source
-        </a>
-      </div>
-      <div className="main-detailed-result-content">
-        <div className="center-img-p position-heart">
-          <div className="image-summary">
-            <img src={detailedRecipe.image} alt={detailedRecipe.title} />
-            {!isFav(detailedRecipe.id) ? (
-              <div className="heart">
-                <i
-                  className="fa-solid fa-heart fa-4x white"
-                  onClick={() => {
-                    addFavorite({
-                      title: detailedRecipe.title,
-                      id: detailedRecipe.id,
-                      image: detailedRecipe.image,
-                    });
-                  }}
-                ></i>
-              </div>
-            ) : (
-              <div className="heart">
-                <i
-                  className="changeColor fa-solid fa-heart fa-4x pink"
-                  onClick={() => {
-                    deleteFavorite(detailedRecipe.id);
-                  }}
-                ></i>
-              </div>
-            )}
-            <div>
-              <div className="icons">
-                {detailedRecipe.vegan ? (
-                  <img className="icon" src={vegan} alt="vegan" />
-                ) : (
-                  ""
-                )}
+    <>
+      <div className="DetailedResult">
+        <div className="title-link">
+          <p className="title">{detailedRecipe.title}</p>
+          <a className="source" href={detailedRecipe.sourceUrl}>
+            Source
+          </a>
+        </div>
+        <div className="main-detailed-result-content">
+          <div className="center-img-p position-heart">
+            <div className="image-summary">
+              <img src={detailedRecipe.image} alt={detailedRecipe.title} />
+              {!isFav(detailedRecipe.id) ? (
+                <div className="heart">
+                  <i
+                    className="fa-solid fa-heart fa-4x white"
+                    onClick={() => {
+                      addFavorite({
+                        title: detailedRecipe.title,
+                        id: detailedRecipe.id,
+                        image: detailedRecipe.image,
+                      });
+                    }}
+                  ></i>
+                </div>
+              ) : (
+                <div className="heart">
+                  <i
+                    className="changeColor fa-solid fa-heart fa-4x pink"
+                    onClick={() => {
+                      deleteFavorite(detailedRecipe.id);
+                    }}
+                  ></i>
+                </div>
+              )}
+              <div>
+                <div className="icons">
+                  {detailedRecipe.vegan ? (
+                    <img className="icon" src={vegan} alt="vegan" />
+                  ) : (
+                    ""
+                  )}
 
-                {detailedRecipe.vegetarian && !detailedRecipe.vegan ? (
-                  <img className="icon" src={vegetarian} alt="vegetarian" />
-                ) : (
-                  ""
-                )}
+                  {detailedRecipe.vegetarian && !detailedRecipe.vegan ? (
+                    <img className="icon" src={vegetarian} alt="vegetarian" />
+                  ) : (
+                    ""
+                  )}
 
-                {detailedRecipe.glutenFree ? (
-                  <img className="icon" src={glutenFree} alt="gluten free" />
-                ) : (
-                  ""
-                )}
+                  {detailedRecipe.glutenFree ? (
+                    <img className="icon" src={glutenFree} alt="gluten free" />
+                  ) : (
+                    ""
+                  )}
 
-                {detailedRecipe.dairyFree ? (
-                  <img className="icon" src={dairyFree} alt="dairy free" />
-                ) : (
-                  ""
-                )}
+                  {detailedRecipe.dairyFree ? (
+                    <img className="icon" src={dairyFree} alt="dairy free" />
+                  ) : (
+                    ""
+                  )}
+                </div>
               </div>
+              <p className="summary">{cleanSummary}</p>
             </div>
-            <p className="summary">{cleanSummary}</p>
+            <ul className="ingredients">
+              {detailedRecipe.extendedIngredients.map((ingredient) => (
+                <li
+                  key={`${ingredient.id}${Math.floor(Math.random() * 200000)}`}
+                >{`${Math.round(ingredient.amount * 100) / 100} ${
+                  ingredient.unit
+                } ${ingredient.name}`}</li>
+              ))}
+            </ul>
           </div>
-          <ul className="ingredients">
-            {detailedRecipe.extendedIngredients.map((ingredient) => (
-              <li
-                key={`${ingredient.id}${Math.floor(Math.random() * 200000)}`}
-              >{`${Math.round(ingredient.amount * 100) / 100} ${
-                ingredient.unit
-              } ${ingredient.name}`}</li>
-            ))}
-          </ul>
         </div>
       </div>
 
@@ -96,7 +98,7 @@ const DetailedResult = ({ detailedRecipe }: Props) => {
         <p id="footer-title">Similar Recipes:</p>
         <SimilarRecipeList id={detailedRecipe.id.toString()} />
       </div>
-    </div>
+    </>
   );
 };
 

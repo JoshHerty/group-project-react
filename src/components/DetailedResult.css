@@ -1,9 +1,11 @@
 .DetailedResult {
-  max-height: 100vh;
+  height: calc(100vh - 221px);
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+  overflow-y: scroll;
+  width: 100%;
 }
 
 .DetailedResult .center-img-p {
@@ -62,9 +64,7 @@
   -webkit-text-stroke: 6px black;
 }
 
-.DetailedResult .similar-recipes {
-  /* display: flex; */
-  /* align-items: center; */
+.similar-recipes {
   background-color: #789645;
   position: fixed;
   width: 100%;
@@ -72,24 +72,10 @@
   margin-top: 10px;
   border-top: 3px solid #eeeeee;
   padding: 0 0 10px 0;
-}
-.DetailedResult .SimilarRecipeList {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  width: 100%;
-  position: relative;
-  align-items: center;
-}
-.DetailedResult #footer-title {
-  text-decoration: underline;
-  width: 175px;
-  margin-left: 2%;
-  font-size: 18pt;
-  user-select: none;
+  height: 142px;
 }
 
-.DetailedResult .SimilarRecipeList div {
+.similar-recipes .SimilarRecipeList div {
   position: relative;
   height: 45%;
   margin: 0 10px;
@@ -101,7 +87,23 @@
   justify-content: center;
 }
 
-.DetailedResult .SimilarRecipeList div a {
+.similar-recipes .SimilarRecipeList {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 100%;
+  position: relative;
+  align-items: center;
+}
+.similar-recipes #footer-title {
+  text-decoration: underline;
+  width: 175px;
+  margin-left: 2%;
+  font-size: 18pt;
+  user-select: none;
+}
+
+.similar-recipes .SimilarRecipeList div a {
   color: black;
   text-decoration: none;
 }

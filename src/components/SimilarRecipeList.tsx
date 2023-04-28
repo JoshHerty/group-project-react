@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { useParams } from "react-router-dom";
 import Recipe from "../models/Recipe";
 import { getSimilarRecipes } from "../services/SpoonacularApiService";
 import "./SimilarRecipeList.css";
